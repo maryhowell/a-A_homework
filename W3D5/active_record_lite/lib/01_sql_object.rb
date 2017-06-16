@@ -105,6 +105,6 @@ class SQLObject
   end
 
   def save
-    # ...
+    id.nil? ? insert : update
   end
 end
