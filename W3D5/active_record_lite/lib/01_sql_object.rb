@@ -58,7 +58,7 @@ class SQLObject
 
   def initialize(params = {})
     params.each do |attr_name, value|
-     attr_name = attr_name.to_sym
+    attr_name = attr_name.to_sym
      if self.class.columns.include?(attr_name)
        self.send("#{attr_name}=", value)
      else
@@ -69,7 +69,6 @@ class SQLObject
 
   def attributes
     @attributes ||= {}
-    # @attributes
   end
 
   def attribute_values
@@ -77,11 +76,32 @@ class SQLObject
   end
 
   def insert
-    # ...
+    columns = self.class.columns
+    col_names = columns.map(&:to_s).join(", ")
+    question_marks = (["?"] * columns.count).join(", ")
+
+    DBConnection.execute(<<-SQL, *attribute_values)
+    INSERT INTO
+      #{self.class.table_name} (#{col_names})
+    VALUES
+      (#{question_marks})
+    SQL
+
+    self.id = DBConnection.last_insert_row_id
   end
 
+
   def update
-    # ...
+    set_line = self.class.columns.map {
+       |attr| "#{attr} = ?" }.join(", ")
+    DBConnection.execute(<<-SQL, *attribute_values, id)
+    UPDATE
+      #{self.class.table_name}
+    SET
+      #{set_line}
+    WHERE
+      #{self.class.table_name}.id = ?
+    SQL
   end
 
   def save
