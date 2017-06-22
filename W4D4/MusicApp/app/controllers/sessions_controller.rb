@@ -6,14 +6,14 @@ class SessionsController < ApplicationController
       params[:user][:password]
     )
     if user.nil?
-      flash[:errors] = ['Invalid Creds']
-    elsif !user.activated?
-      redirect_to root_url, alert: "You must activate your account first! Check your email."
+      flash[:errors] = ["Invalid credentials."]
+      render :new
     else
-      logged_in(user)
+      login!(user)
       redirect_to root_url
     end
   end
+
 
   def destroy
    current_user.reset_session_token!
