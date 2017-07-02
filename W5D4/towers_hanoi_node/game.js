@@ -42,7 +42,18 @@ class Game {
         const topEndDisc = endTower[endTower.length - 1];
         return topStartDisc < topEndDisc;
     }
+  }
 
+  move(startTowerIdx, endTowerIdx) {
+    // only performs the move if it is valid.
+    // Return true/false to indicate whether the move was performed.
+    if (this.isValidMove(startTowerIdx, endTowerIdx)) {
+      
+    }
+  }
+
+  print() {
+    console.log(JSON.stringify(this.towers));
   }
 
   isWon() {
