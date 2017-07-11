@@ -1,5 +1,14 @@
 class CatsController < ApplicationController
 
+  def index
+    render json: Todo.all
+  end
+
+  def update
+  end
+
+  def destroy
+  end
 
   def show
     render json: Todo.find(params[:id])
