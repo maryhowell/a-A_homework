@@ -4,10 +4,8 @@ module.exports = {
   context: __dirname,
   entry: "./frontend/todo_redux.jsx",
   output: {
-    path: path.resolve(__dirname),
-    filename: "bundle.js",
-    devtoolModuleFilenameTemplate: '[resourcePath]',
-    devtoolFallbackModuleFilenameTemplate: '[resourcePath]?[hash]'
+    path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
+    filename: "bundle.js"
   },
   module: {
     loaders: [
@@ -21,7 +19,7 @@ module.exports = {
       }
     ]
   },
-  devtool: 'source-maps',
+  devtool: 'source-map',
   resolve: {
     extensions: [".js", ".jsx", "*"]
   }
