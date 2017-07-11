@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+
 html,
 body,
 ul,
@@ -6,7 +9,7 @@ h3,
 button {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Pacifico', cursive;
   border: none;
 }
 
@@ -15,7 +18,7 @@ html, body {
 }
 
 body {
-  background-color: #B2EBF2;
+  background-color: #9BAF8E;
 }
 
 li {
@@ -46,7 +49,8 @@ li {
 h1 {
   margin-top: 40px;
   text-align: center;
-  color: #0097A7;
+  color: #2A7689;
+  /*text-shadow: 0px -2px #2980B9;*/
 }
 
 h3 {
@@ -54,34 +58,36 @@ h3 {
 }
 
 .button, .done, .undone, .delete-button, .create-button {
-  height: 30px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #ffffff;
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-  margin: 10px;
+  position: relative;
+	padding: 10px 40px;
+  /*margin: 0px 10px 10px 0px;*/
+  float: left;
+	border-radius: 10px;
+	font-family: 'Pacifico', cursive;
+	font-size: 25px;
+	text-decoration: none;
+  background-color: #3498DB;
+	/*border-bottom: 5px solid #2980B9;*/
 }
 
-.button:focus, .done:focus, .undone:focus, .delete-button:focus, .create-button:focus, a:focus {
+/*.button:focus, .done:focus, .undone:focus, .delete-button:focus, .create-button:focus, a:focus {
   outline: none;
-}
+}*/
 
 .button:hover, .done:hover, .undone:hover, .delete-button:hover, .create-button:hover {
-  background-color: #0097A7;
+  background-color: #6A7D8E;
 }
 
 .done {
-  background-color: #757575;
+  background-color: #AEBBC7;
 }
 
 .undone {
-  background-color: #00BCD4;
+  background-color: #AEBBC7;
 }
 
 .delete-button {
-  background-color: #FF4081;
+  background-color: #B06660;
 }
 .delete-button:hover {
   background-color: #757575;
@@ -90,7 +96,7 @@ h3 {
 .create-button {
   width: 50%;
   margin: 10px auto;
-  background-color: #00BCD4;
+  background-color: #AEBBC7;
 }
 
 .input {
@@ -98,11 +104,11 @@ h3 {
 }
 
 .todo-list .todo-list-item {
-  background-color: #ffffff;
-  padding: 20px;
-  margin: 10px 0;
-  border: 1px solid #00BCD4;
-  border-radius: 5px;
+  background-color: #C1D2D6;
+    padding: 20px;
+    margin: 10px 0;
+    border: 1px solid #CA8F42;
+    border-radius: 5px;
 }
 .todo-list .todo-list-item .todo-header {
   justify-content: space-between;
@@ -140,7 +146,7 @@ a {
 }
 
 .step-form {
-  background-color: #B2EBF2;
+  background-color: #D2BE96;
   border-radius: 5px;
   padding: 20px;
   margin: 20px 0;
